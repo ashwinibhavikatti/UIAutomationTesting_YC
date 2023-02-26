@@ -11,8 +11,8 @@ import org.openqa.selenium.support.ui.*;
 
 public class RegValidEntry extends TestBase {
 
-	@Test(testName="Insert valid Values",dataProvider = "newRegistrationValidData",groups = {"NewRegistration","edit"})
-	public void addValidRegValues(String sName, String sSurname, String sEmail, String sPhone) {
+	@Test(testName="Insert valid Values",dataProvider = "ValidRegData",groups = {"NewRegistration","edit"})
+	public void regWithValidValues(String sName, String sSurname, String sEmail, String sPhone) {
 		SoftAssert softAssert = new SoftAssert();
 		setNewRegFormValues(sName, sSurname, sEmail, sPhone);
 		oDriver.findElement(By.xpath("//button[@type='submit']")).click();

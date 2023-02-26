@@ -9,8 +9,8 @@ import org.openqa.selenium.support.ui.*;
 
 public class RegInvalidEntry extends TestBase {
 
-	@Test(dataProvider = "invalidNameData",groups = {"NewRegistration","edit"})
-	public void TS1_NewRegWithInvalidName(String sName) {
+	@Test(testName="Insert invalid Name",dataProvider = "InvalidRegNameData",groups = {"NewRegistration","edit"})
+	public void regWithInvalidName(String sName) {
 		System.out.println("Name:"+sName);
 		oDriver.findElement(By.id("name")).sendKeys(sName);
 		oDriver.findElement(By.xpath("//button[@type='submit']")).click();
@@ -18,8 +18,8 @@ public class RegInvalidEntry extends TestBase {
 				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//form/div[1]/p")));
 	}
 
-	@Test(dataProvider = "invalidSurnameData",groups = {"NewRegistration","edit"})
-	public void TS2_NewRegWithInvalidSurname(String sSurname) {
+	@Test(testName="Insert invalid Surname",dataProvider = "InvalidRegSurnameData",groups = {"NewRegistration","edit"})
+	public void regWithInvalidSurname(String sSurname) {
 		System.out.println("Surname: "+sSurname);
 		oDriver.findElement(By.id("surname")).sendKeys(sSurname);
 		oDriver.findElement(By.xpath("//button[@type='submit']")).click();
@@ -27,8 +27,8 @@ public class RegInvalidEntry extends TestBase {
 				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//form/div[2]/p")));
 	}
 
-	@Test(dataProvider = "invalidEmailData",groups = {"NewRegistration","edit"})
-	public void TS3_NewRegWithInvalidEmail(String sEmail) {
+	@Test(testName="Insert invalid Email",dataProvider = "InvalidRegEmailData",groups = {"NewRegistration","edit"})
+	public void regWithInvalidEmail(String sEmail) {
 		System.out.println("email "+sEmail);
 		oDriver.findElement(By.id("email")).sendKeys(sEmail);
 		oDriver.findElement(By.xpath("//button[@type='submit']")).click();
@@ -36,8 +36,8 @@ public class RegInvalidEntry extends TestBase {
 				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//form/div[3]/p")));
 	}
 
-	@Test(dataProvider = "invalidPhoneData",groups = {"NewRegistration","edit"}, priority = 2)
-	public void TS4_NewRegWithInvalidPhone(String sPhone) {
+	@Test(testName="Insert invalid Phone",dataProvider = "InvalidRegPhoneData",groups = {"NewRegistration","edit"}, priority = 2)
+	public void regWithInvalidPhone(String sPhone) {
 		System.out.println("Phone:"+sPhone);
 		oDriver.findElement(By.id("phone")).sendKeys(sPhone);
 		oDriver.findElement(By.xpath("//button[@type='submit']")).click();

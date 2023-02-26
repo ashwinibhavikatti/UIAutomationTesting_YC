@@ -12,8 +12,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 public class RegDeleteEntry extends TestBase {
-	@Test(groups = { "delete" }, priority = 2)
-	public void deleteEntryYes() throws Exception {
+	@Test(testName="Yes on Deletion",groups = { "delete" }, priority = 2)
+	public void deleteEntry_Yes() throws Exception {
 
 		new WebDriverWait(oDriver, Duration.ofSeconds(5))
 				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table/tbody/tr[1]/td[4]/button")))
@@ -33,8 +33,8 @@ public class RegDeleteEntry extends TestBase {
 
 	}
 
-	@Test(groups = { "delete" }, priority = 1)
-	public void deleteEntryNo() {
+	@Test(testName="No on Deletion",groups = { "delete" }, priority = 1)
+	public void deleteEntry_No() {
 		new WebDriverWait(oDriver, Duration.ofSeconds(5))
 				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table/tbody/tr[1]/td[4]/button")))
 				.click();
