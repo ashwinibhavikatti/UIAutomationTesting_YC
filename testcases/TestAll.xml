@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Young Capital Registration" parallel="tests">
+	<parameter name="url" value="http://localhost:3000/" />
+	<parameter name="browserName" value="chrome" />
+	<listeners>
+		<listener class-name="com.assignment.test.TestListener"></listener>
+	</listeners>
+	<test name="TestCase_1_New_Registration" enabled="false">
+		<groups>
+			<run>
+				<include name="NewRegistration" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.assignment.test.RegValidEntry" />
+			<class name="com.assignment.test.RegInvalidEntry" />
+		</classes>
+	</test> 
+	<test name="TestCase_2_Edit_Registration" enabled="false">
+		<groups>
+			<run>
+				<include name="edit" />
+			</run>
+		</groups>		
+		<classes>
+			<class name="com.assignment.test.RegValidEntry" />
+			<class name="com.assignment.test.RegInvalidEntry" />
+		</classes>
+	</test> 
+	<test name="TestCase_3_Delete_Registration">
+		<groups>
+			<run>
+				<include name="delete" />
+			</run>
+		</groups>		
+		<classes>
+			<class name="com.assignment.test.RegDeleteEntry" />
+		</classes>
+	</test> 
+</suite> 
