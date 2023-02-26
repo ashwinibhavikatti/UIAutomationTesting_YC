@@ -83,7 +83,7 @@ public class TestBase extends DataSupplier {
 				.click();
 		new WebDriverWait(oDriver, Duration.ofSeconds(5))
 				.until(ExpectedConditions.visibilityOfElementLocated(By.id("name")));
-		setNewRegFormValues("Maggie", "Ten", "Maggie.Ten@ggc.com", "+31676778787");
+		setNewRegFormValues("Ashwini", "Bhavikatti", "Ashwini.Bhavikatti@ggc.com", "+31676778787");
 		oDriver.findElement(By.xpath("//button[@type='submit']")).click();
 	}
 
